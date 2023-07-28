@@ -66,6 +66,10 @@ export const StackPage: React.FC = () => {
     setClear(false);
   }
 
+  const setState = (index: number) => {
+    return index === currentIndex || isClear ? ElementStates.Changing : ElementStates.Default;
+  }
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     push(value);
@@ -122,7 +126,7 @@ export const StackPage: React.FC = () => {
               key={index}
               index={index}
               head={peak(index)}
-              state={index === currentIndex || isClear ? ElementStates.Changing : ElementStates.Default}
+              state={setState(index)}
             />)
         })}
       </ul>
