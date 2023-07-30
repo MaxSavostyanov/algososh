@@ -26,14 +26,40 @@ export const SortingPage: React.FC = () => {
   const [secondIndex, setSecondIndex] = useState<number | null>(null);
   const [currIndex, setCurrIndex] = useState<number | null>(null);
 
+  const setRadio = (radio: 'selection' | 'bubble') => {
+    setRadioActive(radio);
+    setBtnActive(null);
+    setCurrIndex(null);
+  };
+
+  const setDirection = (direction: Direction) => {
+    setBtnActive(direction);
+    setCurrIndex(null);
+    sort(direction);
+  };
+
+  const getState = (index: number): ElementStates | undefined => {
+    if (index === firstIndex || index === secondIndex)
+      return ElementStates.Changing;
+
+    if (currIndex === null) return ElementStates.Default;
+
+    const isSortedElement =
+      radioActive === 'selection'
+        ? index <= currIndex
+        : index >= currIndex;
+
+    if (isSortedElement) return ElementStates.Modified;
+  };
+
   const selectionAlgorithm = async (array: Array<number>, direction: Direction) => {
     for (let i = 0; i < array.length - 1; i++) {
       let minIndex = i;
       setFirstIndex(i);
-      
+
       for (let j = i + 1; j < array.length; j++) {
-        await delay(DELAY_IN_MS);
         setSecondIndex(j);
+        await delay(DELAY_IN_MS);
         if (compare(array, minIndex, j, direction)) {
           minIndex = j;
         }
@@ -76,32 +102,6 @@ export const SortingPage: React.FC = () => {
     }
   };
 
-  const setRadio = (radio: 'selection' | 'bubble') => {
-    setRadioActive(radio);
-    setBtnActive(null);
-    setCurrIndex(null);
-  };
-
-  const setDirection = (direction: Direction) => {
-    setBtnActive(direction);
-    setCurrIndex(null);
-    sort(direction);
-  };
-
-  const getState = (index: number): ElementStates | undefined => {
-    if (index === firstIndex || index === secondIndex)
-      return ElementStates.Changing;
-
-    if (currIndex === null) return ElementStates.Default;
-
-    const isSortedElement =
-      radioActive === 'selection'
-        ? index <= currIndex
-        : index >= currIndex;
-
-    if (isSortedElement) return ElementStates.Modified;
-  };
-
   return (
     <SolutionLayout title='Сортировка массива'>
       <form className={style.form}>
@@ -112,6 +112,7 @@ export const SortingPage: React.FC = () => {
             value={SELECTION_NAME}
             name='sort-type'
             onClick={() => setRadio('selection')}
+            disabled={btnActive !== null}
             defaultChecked
           />
           <RadioInput
@@ -119,6 +120,7 @@ export const SortingPage: React.FC = () => {
             value={BUBBLE_NAME}
             name='sort-type'
             onClick={() => setRadio('bubble')}
+            disabled={btnActive !== null}
           />
         </div>
         <div className={style.group}>

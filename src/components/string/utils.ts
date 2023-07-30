@@ -1,8 +1,9 @@
 import { ElementStates } from '../../types/element-states';
+import { ILetterWithState } from './types';
 
 export const MAX_LENGTH = 11;
 
-export const swap = (arr: string[], firstIndex: number, secondIndex: number): void => {
+export const swap = (arr: ILetterWithState[], firstIndex: number, secondIndex: number): void => {
   const temp = arr[firstIndex];
   arr[firstIndex] = arr[secondIndex];
   arr[secondIndex] = temp;

@@ -358,10 +358,10 @@ export const ListPage: React.FC = () => {
             disabled={
               (listArray.length === 0 && index === 0 && value)
                 ? false
-                : (!value && !index)
-                || disabled
+                : disabled
+                || index === ''
                 || +index < 0
-                || +index > listArray.length - 1
+                || +index > listArray.length-1
                 || listArray.length >= MAX_SIZE
             }
           />

@@ -1,12 +1,13 @@
 .form {
-  max-width: 944px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   padding: 0;
+  padding-bottom: 48px;
+  width: 100%;
+  max-width: 944px;
 }
 
 .group {
@@ -14,13 +15,13 @@
 }
 
 .list {
-  max-width: 1240px;
-  gap: 16px;
-  width: 100%;
-  padding: 0;
-  margin: 48px auto 0;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1240px;
 }

@@ -10,13 +10,14 @@ import style from './fibonacci-page.module.css';
 
 export const FibonacciPage: React.FC = () => {
   const [number, setNumber] = useState<number | string>('');
-  const [fibonacciArray, setFibonacciArray] = useState<Array<number>>()
+  const [fibonacciArray, setFibonacciArray] = useState<Array<number> | null>(null)
   const [isLoader, setIsLoader] = useState<boolean>(false);
   const [length, setLength] = useState<number>(0);
 
   const onChange = (e: FormEvent<HTMLInputElement>): void => {
     const value = +e.currentTarget.value.trim();
     setNumber(value);
+    setFibonacciArray(null);
   }
 
   const isDisabled = MIN_VALUE <= +number && +number <= MAX_VALUE ? false : true;
@@ -27,12 +28,13 @@ export const FibonacciPage: React.FC = () => {
     const fibonacciArray = getFibonacciNumbers(number);
 
     for (let i = 0; i <= fibonacciArray.length; i++) {
-      await delay(SHORT_DELAY_IN_MS);
       setFibonacciArray(fibonacciArray.slice(0, i + 1));
       setLength(i);
+      await delay(SHORT_DELAY_IN_MS);
     }
 
     setIsLoader(false);
+    setNumber('');
   }
 
   const onClick = (e: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>): void => {
@@ -54,6 +56,7 @@ export const FibonacciPage: React.FC = () => {
           max={MAX_VALUE}
           isLimitText={true}
           onChange={onChange}
+          disabled={isLoader}
         />
         <Button
           text='Рассчитать'
@@ -62,18 +65,19 @@ export const FibonacciPage: React.FC = () => {
           onClick={onClick}
         />
       </form>
-      <ul
-        className={`${style.list}`}
-        style={{ justifyContent: length < 10 ? 'center' : 'flex-start' }}>
-        {fibonacciArray?.map((number: number, index: number) => {
-          return (
-            <Circle
-              letter={`${number}`}
-              key={index}
-              index={index}
-            />)
-        })}
-      </ul>
+      {fibonacciArray &&
+        <ul
+          className={`${style.list}`}
+          style={{ justifyContent: length < 10 ? 'center' : 'flex-start' }}>
+          {fibonacciArray.map((number: number, index: number) => {
+            return (
+              <Circle
+                letter={`${number}`}
+                key={index}
+                index={index}
+              />)
+          })}
+        </ul>}
     </SolutionLayout>
   );
 };
