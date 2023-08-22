@@ -1,0 +1,66 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 952px;
+  margin: 0 auto;
+  padding-bottom: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 100px;
+  list-style: none;
+}
+
+.input {
+  width: 100%;
+  max-width: 204px;
+}
+
+.btnsGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btnSmall {
+  max-width: 180px;
+  width: 100%;
+}
+
+.btnLarge {
+  max-width: 362px;
+  width: 100%;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.circleSmall {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.up {
+  top: -65px;
+  left: 36px;
+}
+
+.down {
+  bottom: -90px;
+  left: 36px;
+}

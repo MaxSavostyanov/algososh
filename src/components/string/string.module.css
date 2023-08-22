@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 120px;
+  width: 100%;
+  max-width: 522px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: auto 0;
+  padding: 0;
+  width: 100%;
+}
