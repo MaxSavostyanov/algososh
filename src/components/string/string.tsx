@@ -13,7 +13,6 @@ import { ILetterWithState } from './types';
 export const StringComponent: React.FC = () => {
   const [string, setString] = useState<string>('');
   const [isLoader, setIsLoader] = useState<boolean>(false);
-  const [currIndex, setCurrIndex] = useState<number>(0);
   const [reversedString, setReversedString] = useState<ILetterWithState[] | null>(null);
 
   const onChange = (e: FormEvent<HTMLInputElement>): void => {

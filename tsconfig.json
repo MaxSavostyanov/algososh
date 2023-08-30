@@ -19,7 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "types": ["estree"],
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "src"
