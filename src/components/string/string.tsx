@@ -13,8 +13,6 @@ export const StringComponent: React.FC = () => {
   const [isLoader, setIsLoader] = useState<boolean>(false);
   const [reversedString, setReversedString] = useState<ILetterWithState[] | null>(null);
 
-  console.log(typeof setReversedString);
-
   const onChange = (e: FormEvent<HTMLInputElement>): void => {
     const value = e.currentTarget.value.trim();
     setString(value);
