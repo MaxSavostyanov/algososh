@@ -3,12 +3,14 @@
 exports[`Тестирование компонента Circle без буквы 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -26,12 +28,14 @@ exports[`Тестирование компонента Circle без буквы 
 exports[`Тестирование компонента Circle в состоянии changing 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   changing"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -49,12 +53,14 @@ exports[`Тестирование компонента Circle в состоян�
 exports[`Тестирование компонента Circle в состоянии default 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -72,12 +78,14 @@ exports[`Тестирование компонента Circle в состоян�
 exports[`Тестирование компонента Circle в состоянии modified 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   modified"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -95,6 +103,7 @@ exports[`Тестирование компонента Circle в состоян�
 exports[`Тестирование компонента Circle с head 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head string"
@@ -103,6 +112,7 @@ exports[`Тестирование компонента Circle с head 1`] = `
   </div>
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -120,12 +130,14 @@ exports[`Тестирование компонента Circle с head 1`] = `
 exports[`Тестирование компонента Circle с index 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -145,18 +157,21 @@ exports[`Тестирование компонента Circle с index 1`] = `
 exports[`Тестирование компонента Circle с react-элементом в head 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   >
     <div
       className="content "
+      data-cy="circle"
     >
       <div
         className="text text_type_input text_color_input mb-4 absolute head element"
       />
       <div
         className="circle   default"
+        data-cy="circle-border"
       >
         <p
           className="text text_type_circle text_color_input letter"
@@ -172,6 +187,7 @@ exports[`Тестирование компонента Circle с react-элем�
   </div>
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -189,12 +205,14 @@ exports[`Тестирование компонента Circle с react-элем�
 exports[`Тестирование компонента Circle с react-элементом в tail 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -208,12 +226,14 @@ exports[`Тестирование компонента Circle с react-элем�
   >
     <div
       className="content "
+      data-cy="circle"
     >
       <div
         className="text text_type_input text_color_input mb-4 absolute head element"
       />
       <div
         className="circle   default"
+        data-cy="circle-border"
       >
         <p
           className="text text_type_circle text_color_input letter"
@@ -233,12 +253,14 @@ exports[`Тестирование компонента Circle с react-элем�
 exports[`Тестирование компонента Circle с tail 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -258,12 +280,14 @@ exports[`Тестирование компонента Circle с tail 1`] = `
 exports[`Тестирование компонента Circle с буквами 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle   default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"
@@ -283,12 +307,14 @@ exports[`Тестирование компонента Circle с буквами 
 exports[`Тестирование компонента Circle с пропом isSmall ===  true 1`] = `
 <div
   className="content "
+  data-cy="circle"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
   />
   <div
     className="circle  small default"
+    data-cy="circle-border"
   >
     <p
       className="text text_type_circle text_color_input letter"

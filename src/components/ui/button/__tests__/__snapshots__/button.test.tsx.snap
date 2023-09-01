@@ -9,6 +9,7 @@ exports[`Тестирование компонента Button Кнопка c и�
   <img
     alt="Загрузка."
     className="loader_icon"
+    data-cy="loader"
     src="loader.svg"
   />
 </button>
