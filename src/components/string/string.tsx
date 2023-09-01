@@ -3,17 +3,14 @@ import { SolutionLayout } from '../ui/solution-layout/solution-layout';
 import { Input } from '../ui/input/input';
 import { Button } from '../ui/button/button';
 import { Circle } from '../ui/circle/circle';
-import { DELAY_IN_MS, SHORT_DELAY_IN_MS, delay } from '../../constants/delays';
 import { MAX_LENGTH } from './constants';
-import { swap } from './utils';
+import { getReversedString} from './utils';
 import style from './string.module.css';
-import { ElementStates } from '../../types/element-states';
 import { ILetterWithState } from './types';
 
 export const StringComponent: React.FC = () => {
   const [string, setString] = useState<string>('');
   const [isLoader, setIsLoader] = useState<boolean>(false);
-  const [currIndex, setCurrIndex] = useState<number>(0);
   const [reversedString, setReversedString] = useState<ILetterWithState[] | null>(null);
 
   const onChange = (e: FormEvent<HTMLInputElement>): void => {
@@ -21,43 +18,14 @@ export const StringComponent: React.FC = () => {
     setString(value);
   }
 
-  const getReversedString = async (string: string): Promise<void> => {
+  const onClickReverse = async (e: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setIsLoader(true);
 
-    const array: ILetterWithState[] = string.split('').map((item: string) => ({
-      letter: item,
-      state: ElementStates.Default
-    }));
-
-    let end = array.length - 1;
-
-    setReversedString(array);
-
-    await delay(SHORT_DELAY_IN_MS);
-
-    for (let i = 0; i < array.length / 2; i++) {
-      array[i].state = ElementStates.Changing;
-      array[end].state = ElementStates.Changing;
-      setReversedString([...array]);
-
-      await delay(DELAY_IN_MS);
-
-      swap(array, i, end);
-      array[i].state = ElementStates.Modified;
-      array[end].state = ElementStates.Modified;
-      setReversedString([...array]);
-
-      await delay(DELAY_IN_MS);
-      end--;
-    }
+    await getReversedString(string, setReversedString);
 
     setIsLoader(false);
     setString('');
-  }
-
-  const onClickReverse = (e: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    getReversedString(string);
   }
 
   return (

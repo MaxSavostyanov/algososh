@@ -26,3 +26,30 @@ export const compare = (array: Array<number>, first: number, second: number, dir
     : array[first] < array[second];
 }
 
+export const selectionAlgorithm = (array: Array<number>, direction: Direction): Array<number> => {
+  for (let i = 0; i < array.length - 1; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < array.length; j++) {
+      if (compare(array, minIndex, j, direction)) {
+        minIndex = j;
+      }
+    }
+
+    swap(array, i, minIndex);
+  }
+
+  return array;
+};
+
+export const bubbleAlgorithm = (array: number[], direction: Direction): Array<number> => {
+  for (let i = array.length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (compare(array, j, j + 1, direction)) {
+        swap(array, j, j + 1);
+      }
+    }
+  }
+
+  return array;
+};
