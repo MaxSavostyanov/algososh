@@ -1,4 +1,4 @@
-import { SHORT_DELAY_IN_MS, DELAY_IN_MS } from '../../src/constants/delays';
+import { SHORT_DELAY_IN_MS } from '../../src/constants/delays';
 import { checkBtnDisabled } from '../utils/utils';
 import { changingStyle, circleBorder, defaultStyle, circle } from '../constants/constants';
 
@@ -48,12 +48,12 @@ describe('Страница Стек работает корректно', () => 
 
     cy.wait(SHORT_DELAY_IN_MS);
 
-    cy.get(circle).should("have.length", curr);
+    cy.get(circle).should('have.length', curr);
 
     curr--;
   });
 
-  it('Удаление элемента из стэка работает корректно', () => {
+  it('Очистка стэка работает корректно', () => {
     testArray.forEach((el) => addElement(el));
 
     cy.get('button').eq(3).click();
@@ -66,7 +66,7 @@ describe('Страница Стек работает корректно', () => 
 
     cy.wait(SHORT_DELAY_IN_MS);
 
-    cy.get(circle).should("have.length", 0);
+    cy.get(circle).should('have.length', 0);
   });
 
 });
