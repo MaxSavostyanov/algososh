@@ -1,4 +1,5 @@
 export const circle = '[data-cy="circle"]';
+export const circleSmall = '[data-cy="circle-small"]';
 export const circleBorder = '[data-cy="circle-border"]';
 export const loader = '[data-cy="loader"]';
 

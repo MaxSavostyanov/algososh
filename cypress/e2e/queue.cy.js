@@ -11,7 +11,7 @@ const addElement = (el) => {
 
 const testArray = [159, 123, 15];
 
-describe('Страница Стек работает корректно', () => {
+describe('Страница Очередь работает корректно', () => {
   beforeEach(() => {
     cy.visit(`/queue`);
   });
