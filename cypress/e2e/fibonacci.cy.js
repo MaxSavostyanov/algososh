@@ -1,16 +1,13 @@
 import { SHORT_DELAY_IN_MS } from '../../src/constants/delays';
 import { circle, fibArray } from '../constants/constants';
-import { checkLoader } from '../utils/utils';
+import { checkLoader, checkBtnDisabled } from '../utils/utils';
 
 describe('Страница Фибоначчи работает корректно', () => {
   beforeEach(() => {
     cy.visit(`/fibonacci`);
   });
 
-  it('Если строка ввода пустая, то копка не активна', function () {
-    cy.get('button').eq(1).should('be.disabled');
-    cy.get('input').should('be.empty');
-  });
+  checkBtnDisabled('button', 'input');
 
   it('Числа генерируются корректно', () => {
     cy.get('input').type(fibArray.length - 1);

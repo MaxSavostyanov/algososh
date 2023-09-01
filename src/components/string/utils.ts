@@ -48,6 +48,6 @@ export const getReversedString = async (string: string, setReversedString?: { (v
     await delay(DELAY_IN_MS);
     end--;
   }
-
+  
   return array;
 }

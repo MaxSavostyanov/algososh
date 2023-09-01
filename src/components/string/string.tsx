@@ -18,11 +18,11 @@ export const StringComponent: React.FC = () => {
     setString(value);
   }
 
-  const onClickReverse = (e: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>): void => {
+  const onClickReverse = async (e: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsLoader(true);
 
-    getReversedString(string, setReversedString);
+    await getReversedString(string, setReversedString);
 
     setIsLoader(false);
     setString('');
